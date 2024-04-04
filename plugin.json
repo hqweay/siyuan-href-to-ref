@@ -1,0 +1,38 @@
+{
+  "name": "siyuan-wiki-to-ref",
+  "author": "养恐龙",
+  "url": "https://github.com/hqweay/siyuan-wiki-to-ref",
+  "version": "0.1.6",
+  "minAppVersion": "3.0.0",
+  "backends": [
+    "windows",
+    "linux",
+    "darwin"
+  ],
+  "frontends": [
+    "desktop",
+    "desktop-window"
+  ],
+  "displayName": {
+    "en_US": "一键双链转引用",
+    "zh_CN": "一键双链转引用"
+  },
+  "description": {
+    "en_US": "一键双链转引用",
+    "zh_CN": "一键双链转引用"
+  },
+  "readme": {
+    "en_US": "README.md",
+    "zh_CN": "README.md"
+  },
+  "funding": {
+    "custom": [
+      "https://afdian.net/a/frostime"
+    ]
+  },
+  "keywords": [
+    "plugin",
+    "type",
+    "中文"
+  ]
+}
