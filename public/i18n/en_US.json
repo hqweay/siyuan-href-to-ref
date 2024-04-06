@@ -1,5 +1,9 @@
 {
-  "addTopBarIcon": "Wiki to Ref",
+  "linkToWiki": "link(siyuan)👉ref",
+  "wikiToLink": "ref👉link(siyuan)",
+  "hrefToText": "ref/link(siyuan)👉text",
+  "hrefToTextIncludeA": "ref/link👉text",
+  "menu": "convert ref or link to",
   "cancel": "Cancel",
   "save": "Save"
 }
