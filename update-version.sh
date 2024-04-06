@@ -12,4 +12,4 @@ git add .
 git commit -m "upgrade#$new_version"
 git push
 git tag $new_version
-git push --tags
+git push $new_version
