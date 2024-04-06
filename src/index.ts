@@ -139,11 +139,10 @@ export default class PluginSample extends Plugin {
               );
 
               editElements.forEach((editElement: HTMLElement) => {
-                // 获取引用和笔记内单向超链接
+                // 获取引用和笔记内链接
+                // @todo data-type="a" 使用全匹配，避免 [data-type="a strong"] 这类情况转换后失去样式
                 editElement
-                  .querySelectorAll(
-                    '[data-type="a"], [data-type="block-ref"]'
-                  )
+                  .querySelectorAll('[data-type="a"], [data-type="block-ref"]')
                   .forEach((ele) => {
                     var parentElement = ele.parentElement; // 获取父元素
                     parentElement.appendChild(ele.firstChild); // 将子元素移动到父元素内
