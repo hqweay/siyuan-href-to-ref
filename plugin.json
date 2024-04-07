@@ -2,7 +2,7 @@
   "name": "siyuan-href-to-ref",
   "author": "养恐龙",
   "url": "https://github.com/hqweay/siyuan-href-to-ref",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "minAppVersion": "3.0.0",
   "backends": [
     "windows",
