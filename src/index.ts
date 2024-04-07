@@ -105,7 +105,7 @@ export default class PluginSample extends Plugin {
               );
 
               editElements.forEach((editElement: HTMLElement) => {
-                // 获取引用和笔记内单向超链接
+                // 获取引用和笔记内块超链接
                 editElement
                   .querySelectorAll(
                     '[data-type="a"][data-href^="siyuan://"], [data-type="block-ref"]'
