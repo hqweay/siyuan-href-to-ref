@@ -4,22 +4,15 @@
   "url": "https://github.com/hqweay/siyuan-href-to-ref",
   "version": "0.2.0",
   "minAppVersion": "3.0.0",
-  "backends": [
-    "windows",
-    "linux",
-    "darwin"
-  ],
-  "frontends": [
-    "desktop",
-    "desktop-window"
-  ],
+  "backends": ["windows", "linux", "darwin"],
+  "frontends": ["desktop", "desktop-window"],
   "displayName": {
-    "en_US": "一键转换链接、引用、文本",
-    "zh_CN": "一键转换链接、引用、文本"
+    "en_US": "一键行内元素转换（引用、链接、标注等）",
+    "zh_CN": "一键行内元素转换（引用、链接、标注等）"
   },
   "description": {
-    "en_US": "一键转换链接、引用、文本",
-    "zh_CN": "一键转换链接、引用、文本"
+    "en_US": "一键行内元素转换（引用、链接、标注等）",
+    "zh_CN": "一键行内元素转换（引用、链接、标注等）"
   },
   "readme": {
     "en_US": "README.md",
@@ -28,9 +21,5 @@
   "funding": {
     "custom": []
   },
-  "keywords": [
-    "plugin",
-    "type",
-    "中文"
-  ]
+  "keywords": ["plugin", "type", "中文"]
 }

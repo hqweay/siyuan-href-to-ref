@@ -2,7 +2,7 @@
   "name": "siyuan-wiki-to-ref",
   "version": "0.2.0",
   "type": "module",
-  "description": "一键转换链接、引用、文本",
+  "description": "一键行内元素转换（引用、链接、标注等）",
   "repository": "",
   "homepage": "",
   "author": "养恐龙",
