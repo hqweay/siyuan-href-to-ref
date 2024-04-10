@@ -3,6 +3,8 @@
   "wikiToLink": "ref👉link(siyuan)",
   "hrefToText": "ref/link(siyuan)👉text",
   "hrefToTextIncludeA": "ref/link👉text",
+  "strongToText": "strong👉text",
+  "markToText": "mark👉text",
   "menu": "convert ref or link to",
   "cancel": "Cancel",
   "save": "Save"

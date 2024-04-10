@@ -95,70 +95,66 @@ export default class PluginSample extends Plugin {
           click: () => {
             const doOperations: IOperation[] = [];
 
-            detail.blockElements.forEach((item: HTMLElement) => {
-              const editElements = item.querySelectorAll(
-                this.availableBlocks
-                  .map((item) => {
-                    return `[data-type=${item}] [contenteditable="true"]`;
-                  })
-                  .join(",")
-              );
-
-              editElements.forEach((editElement: HTMLElement) => {
-                // 获取引用和笔记内块超链接
-                editElement
-                  .querySelectorAll(
-                    '[data-type="a"][data-href^="siyuan://"], [data-type="block-ref"]'
-                  )
-                  .forEach((ele) => {
-                    var parentElement = ele.parentElement; // 获取父元素
-                    parentElement.appendChild(ele.firstChild); // 将子元素移动到父元素内
-                  });
-              });
-              doOperations.push({
-                id: item.dataset.nodeId,
-                data: item.outerHTML,
-                action: "update",
-              });
-            });
-            detail.protyle.getInstance().transaction(doOperations);
+            // 获取引用和笔记内块超链接
+            this.toText(
+              detail,
+              '[data-type="a"][data-href^="siyuan://"], [data-type="block-ref"]'
+            );
           },
         },
         {
           label: this.i18n.hrefToTextIncludeA,
           click: () => {
-            const doOperations: IOperation[] = [];
-
-            detail.blockElements.forEach((item: HTMLElement) => {
-              const editElements = item.querySelectorAll(
-                this.availableBlocks
-                  .map((item) => {
-                    return `[data-type=${item}] [contenteditable="true"]`;
-                  })
-                  .join(",")
-              );
-
-              editElements.forEach((editElement: HTMLElement) => {
-                // 获取引用和笔记内链接
-                // @todo data-type="a" 使用全匹配，避免 [data-type="a strong"] 这类情况转换后失去样式
-                editElement
-                  .querySelectorAll('[data-type="a"], [data-type="block-ref"]')
-                  .forEach((ele) => {
-                    var parentElement = ele.parentElement; // 获取父元素
-                    parentElement.appendChild(ele.firstChild); // 将子元素移动到父元素内
-                  });
-              });
-              doOperations.push({
-                id: item.dataset.nodeId,
-                data: item.outerHTML,
-                action: "update",
-              });
-            });
-            detail.protyle.getInstance().transaction(doOperations);
+            // 获取引用和笔记内链接
+            // @todo data-type="a" 使用全匹配，避免 [data-type="a strong"] 这类情况转换后失去样式
+            this.toText(detail, '[data-type="a"], [data-type="block-ref"]');
+          },
+        },
+        {
+          label: this.i18n.strongToText,
+          click: () => {
+            // 获取加粗
+            // @todo data-type="strong" 使用全匹配，避免 [data-type="a strong"] 这类情况转换后失去样式
+            this.toText(detail, '[data-type="strong"]');
+          },
+        },
+        {
+          label: this.i18n.markToText,
+          click: () => {
+            // 获取高亮
+            // @todo data-type="mark" 使用全匹配，避免 [data-type="a mark"] 这类情况转换后失去样式
+            this.toText(detail, '[data-type="mark"]');
           },
         },
       ],
     });
+  }
+
+  private toText(detail, querySelectorAllStr) {
+    const doOperations: IOperation[] = [];
+
+    detail.blockElements.forEach((item: HTMLElement) => {
+      const editElements = item.querySelectorAll(
+        this.availableBlocks
+          .map((item) => {
+            return `[data-type=${item}] [contenteditable="true"]`;
+          })
+          .join(",")
+      );
+
+      editElements.forEach((editElement: HTMLElement) => {
+        editElement.querySelectorAll(querySelectorAllStr).forEach((ele) => {
+          var parentElement = ele.parentElement; // 获取父元素
+          parentElement.appendChild(ele.firstChild); // 将子元素移动到父元素内
+        });
+      });
+      doOperations.push({
+        id: item.dataset.nodeId,
+        data: item.outerHTML,
+        action: "update",
+      });
+    });
+    detail.protyle.getInstance().transaction(doOperations);
   }
 
   onload() {

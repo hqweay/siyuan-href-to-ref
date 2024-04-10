@@ -4,15 +4,8 @@
   "url": "https://github.com/hqweay/siyuan-href-to-ref",
   "version": "0.1.3",
   "minAppVersion": "3.0.0",
-  "backends": [
-    "windows",
-    "linux",
-    "darwin"
-  ],
-  "frontends": [
-    "desktop",
-    "desktop-window"
-  ],
+  "backends": ["windows", "linux", "darwin"],
+  "frontends": ["desktop", "desktop-window"],
   "displayName": {
     "en_US": "一键转换链接、引用、文本",
     "zh_CN": "一键转换链接、引用、文本"
@@ -26,13 +19,7 @@
     "zh_CN": "README.md"
   },
   "funding": {
-    "custom": [
-      "https://afdian.net/a/frostime"
-    ]
+    "custom": []
   },
-  "keywords": [
-    "plugin",
-    "type",
-    "中文"
-  ]
+  "keywords": ["plugin", "type", "中文"]
 }
