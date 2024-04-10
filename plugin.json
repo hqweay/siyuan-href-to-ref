@@ -2,10 +2,17 @@
   "name": "siyuan-href-to-ref",
   "author": "养恐龙",
   "url": "https://github.com/hqweay/siyuan-href-to-ref",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "minAppVersion": "3.0.0",
-  "backends": ["windows", "linux", "darwin"],
-  "frontends": ["desktop", "desktop-window"],
+  "backends": [
+    "windows",
+    "linux",
+    "darwin"
+  ],
+  "frontends": [
+    "desktop",
+    "desktop-window"
+  ],
   "displayName": {
     "en_US": "一键行内元素转换（引用、链接、标注等）",
     "zh_CN": "一键行内元素转换（引用、链接、标注等）"
@@ -21,5 +28,9 @@
   "funding": {
     "custom": []
   },
-  "keywords": ["plugin", "type", "中文"]
+  "keywords": [
+    "plugin",
+    "type",
+    "中文"
+  ]
 }
