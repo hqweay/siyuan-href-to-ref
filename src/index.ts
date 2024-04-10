@@ -127,6 +127,13 @@ export default class PluginSample extends Plugin {
           },
         },
         {
+          // label: this.i18n.markToText,
+          label: this.i18n.tagToText,
+          click: () => {
+            this.toText(detail, '[data-type="tag"]');
+          },
+        },
+        {
           label: this.i18n.cleanRefSelf,
           click: () => {
             const doOperations: IOperation[] = [];
@@ -135,7 +142,7 @@ export default class PluginSample extends Plugin {
               .querySelector(".fn__flex-1.protyle")
               .querySelector(".protyle-title.protyle-wysiwyg--attr")
               .getAttribute("data-node-id");
-
+            // console.log(docID);
             detail.blockElements.forEach((item: HTMLElement) => {
               const editElements = item.querySelectorAll(
                 this.availableBlocks
@@ -150,7 +157,7 @@ export default class PluginSample extends Plugin {
                   // 只获取笔记内部的引用
                   .querySelectorAll('[data-type="block-ref"]')
                   .forEach((ele) => {
-                    console.log(ele);
+                    // console.log(ele);
                     if (ele.getAttribute("data-id") === docID) {
                       ele.remove();
                     }
@@ -183,8 +190,11 @@ export default class PluginSample extends Plugin {
 
       editElements.forEach((editElement: HTMLElement) => {
         editElement.querySelectorAll(querySelectorAllStr).forEach((ele) => {
-          var parentElement = ele.parentElement; // 获取父元素
-          parentElement.appendChild(ele.firstChild); // 将子元素移动到父元素内
+          // var parentElement = ele.parentElement; // 获取父元素
+          // parentElement.appendChild(ele.firstChild); // 将子元素移动到父元素内
+          // ele.remove()
+          var textNode = document.createTextNode(ele.textContent);
+          ele.parentNode.replaceChild(textNode, ele);
         });
       });
       doOperations.push({
