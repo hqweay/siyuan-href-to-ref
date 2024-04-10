@@ -5,6 +5,7 @@
   "hrefToTextIncludeA": "ref/link👉text",
   "strongToText": "strong👉text",
   "markToText": "mark👉text",
+  "cleanRefSelf": "Clean up references to the document itself",
   "menu": "convert ref or link to",
   "cancel": "Cancel",
   "save": "Save"

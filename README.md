@@ -6,6 +6,7 @@
 - "hrefToTextIncludeA": "引用/链接 👉 文本",
 - "strongToText": "加粗 👉 文本",
 - "markToText": "标注 👉 文本",
+- "cleanRefSelf": "清理文档自身的引用"：比如将一堆反链整理到文档后会有许多引用自身的引用，可使用该功能选中清理。
 
 ## 致谢 🙏
 

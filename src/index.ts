@@ -126,6 +126,45 @@ export default class PluginSample extends Plugin {
             this.toText(detail, '[data-type="mark"]');
           },
         },
+        {
+          label: this.i18n.cleanRefSelf,
+          click: () => {
+            const doOperations: IOperation[] = [];
+
+            const docID = document
+              .querySelector(".fn__flex-1.protyle")
+              .querySelector(".protyle-title.protyle-wysiwyg--attr")
+              .getAttribute("data-node-id");
+
+            detail.blockElements.forEach((item: HTMLElement) => {
+              const editElements = item.querySelectorAll(
+                this.availableBlocks
+                  .map((item) => {
+                    return `[data-type=${item}] [contenteditable="true"]`;
+                  })
+                  .join(",")
+              );
+
+              editElements.forEach((editElement: HTMLElement) => {
+                editElement
+                  // 只获取笔记内部的引用
+                  .querySelectorAll('[data-type="block-ref"]')
+                  .forEach((ele) => {
+                    console.log(ele);
+                    if (ele.getAttribute("data-id") === docID) {
+                      ele.remove();
+                    }
+                  });
+              });
+              doOperations.push({
+                id: item.dataset.nodeId,
+                data: item.outerHTML,
+                action: "update",
+              });
+            });
+            detail.protyle.getInstance().transaction(doOperations);
+          },
+        },
       ],
     });
   }

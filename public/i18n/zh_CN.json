@@ -5,6 +5,7 @@
   "hrefToTextIncludeA": "引用/链接👉文本",
   "strongToText": "加粗👉文本",
   "markToText": "标注👉文本",
+  "cleanRefSelf": "清理文档自身的引用",
   "menu": "调整块中的引用或链接",
   "cancel": "取消",
   "save": "保存"
